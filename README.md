@@ -1,2 +1,4 @@
 # repo-vuln-app-lab
-Laboratorio de pruebas de vulnerabilidades
+
+Aplicación deliberadamente insegura para pruebas de SAST y detección de vulnerabilidades.
+No usar en producción.
