@@ -1,0 +1,24 @@
+name: TMAS Scan
+on: push:
+
+jobs:
+  tmas-scan:
+    name: TMAS Repo Scan
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: repo-name
+
+      - name: Download TMAS and Scan Repo
+        uses: trendmicro/tmas-scan-action@v2
+        with:
+          version: '2'
+          vulnerabilitiesScan: true
+          malwareScan: false
+          secretsScan: true
+          artifact: dir:./repo-name
+          additionalArgs: --region=us-east-1   # Ajustar a tu región
+          tmasApiKey: ${{ secrets.TMAS_API_KEY }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
