@@ -1,6 +1,7 @@
 name: TMAS Scan
-on: push:
 
+on: 
+  push:
 jobs:
   tmas-scan:
     name: TMAS Repo Scan
